@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+		<ComponentGroup Id="ApplicationFiles" Directory="INSTALLFOLDER">
+			<Component Guid="{6867C9EB-022C-4224-AF1C-7A9A64922084}">
+				<File Id="WorkerService1.exe" Name="WorkerService1.exe" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\WorkerService1.exe" />
+					
+				<ServiceInstall
+					Id="ServiceInstaller"
+					Type="ownProcess"
+					Name="PowerTrades"
+					DisplayName="Power Trades Service"
+					Description="Reports periodically on power trades."
+					Account="LocalSystem"
+					Start="demand"
+					ErrorControl="normal" 
+					Interactive="no" />
+			</Component>
+			<Component Guid="{DE6FDD2B-A971-4D16-A560-20E821181A28}">
+				<File Id="PowerService.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\PowerService.dll" />
+			</Component>
+			<Component Guid="{60240977-B5EB-4656-8482-9ACC578A52AB}">
+				<File Id="Microsoft.Extensions.Configuration.EnvironmentVariables.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+			</Component>
+			<Component Guid="{19829D29-BC0E-474B-ABEB-594D05DFF6D6}">
+				<File Id="Microsoft.Extensions.Configuration.UserSecrets.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+			</Component>
+			<Component Guid="{F0E11681-117C-444F-BDD9-1E2CFCD16063}">
+				<File Id="Microsoft.Extensions.Hosting.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\Microsoft.Extensions.Hosting.dll" />
+			</Component>
+			<Component Guid="{8312C9FA-8478-4CAE-AED4-55EC2096870A}">
+				<File Id="Microsoft.Extensions.Hosting.WindowsServices.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\Microsoft.Extensions.Hosting.WindowsServices.dll" />
+			</Component>
+			<Component Guid="{CA7D8825-95E5-427F-BAC5-6FDFB13B15F0}">
+				<File Id="NLog.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\NLog.dll" />
+			</Component>
+			<Component Guid="{E02493A6-889C-4A00-821A-8312B56E11FA}">
+				<File Id="NLog.Extensions.Logging.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\NLog.Extensions.Logging.dll" />
+			</Component>
+			<Component Guid="{1E839021-078C-4438-B75A-B1DBF1FA5D5D}">
+				<File Id="NLog.Web.AspNetCore.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\NLog.Web.AspNetCore.dll" />
+			</Component>
+			<Component Guid="{FF616136-17A4-4179-91AB-D7C6D68770F2}">
+				<File Id="WorkerService1.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\WorkerService1.dll" />
+			</Component>
+			<Component Guid="{9DDD292C-6635-4C53-935B-DFFB1D052FDF}">
+				<File Id="WorkerService1.Resources.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\WorkerService1.Resources.dll" />
+			</Component>
+			<Component Guid="{414944D6-DCEC-4543-A958-9804BA4F888B}">
+				<File Id="appsettings.json" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\appsettings.json" />
+			</Component>
+			<Component Guid="{70E805A9-2894-4B2B-BC53-D9D86F5474A4}">
+				<File Id="System.ServiceProcess.ServiceController.dll" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\runtimes\win\lib\net6.0\System.ServiceProcess.ServiceController.dll" />
+			</Component>
+			<Component Guid="{E94714ED-9EA6-4D89-90A8-6A4150C7EC9A}">
+				<File Id="WorkerService1.runtimeconfig.json" KeyPath="yes" Source="$(var.WorkerService1.TargetDir)\WorkerService1.runtimeconfig.json" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
+
+

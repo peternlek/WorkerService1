@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="{FCA3A287-4F75-41AC-BEF9-7A80F9437624}" Name="PowerTrades" Language="1033" Version="1.0.0.0" Manufacturer="PNH" UpgradeCode="F45D6A72-625B-4CBC-B64D-58931A9E1DB9">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of PowerTrades is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Power Trades Installer">
+			<ComponentGroupRef Id="ApplicationFiles" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="DesktopFolder" Name="Desktop" />
+
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="CompanyFolder" Name="PNH">
+					<Directory Id="INSTALLFOLDER" Name="PowerTrades" />
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+</Wix>
