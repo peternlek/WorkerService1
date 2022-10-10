@@ -1,5 +1,4 @@
 # WorkerService1
  Petroineos Coding Challenge
 
-Note: The installer will create the service but must be manually started, in production code this would be updated
-to start the service after installation and at at system start-up.
+Note: This solution uses WiX for installation therefore the VS Wix Toolset extension is required. The installer will create the service but this must be manually starte-up. In production code this would be updated to start the service after installation and at system start-up.
