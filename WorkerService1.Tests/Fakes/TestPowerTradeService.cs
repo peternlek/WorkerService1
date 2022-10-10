@@ -25,10 +25,7 @@ namespace WorkerService1.Tests.Fakes
             {
                 base.ExecuteAsync(cancellationTokenSource.Token);
                 await Task.Delay(delay);
-                throw new TaskCanceledException(
-                    "Test Finished",
-                    null,
-                    cancellationTokenSource.Token);
+                cancellationTokenSource.Cancel();
 
             }, cancellationTokenSource.Token);
         }
