@@ -82,7 +82,7 @@ namespace WorkerService1.Tests.Services
                 {
                     await uut.FakeExecuteAsync(300);
                 }
-                catch (OperationCanceledException e) {}
+                catch (TaskCanceledException e) {}
             }).Wait();
 
             // Assert
@@ -120,7 +120,7 @@ namespace WorkerService1.Tests.Services
                 {
                     await uut.FakeExecuteAsync(300);
                 }
-                catch (OperationCanceledException e) {}
+                catch (TaskCanceledException e) {}
             }).Wait();
 
             // Assert
@@ -162,7 +162,7 @@ namespace WorkerService1.Tests.Services
                 {
                     await uut.FakeExecuteAsync(4000);
                 }
-                catch (OperationCanceledException e) { }
+                catch (TaskCanceledException e) { }
             }).Wait();
 
             // Assert
