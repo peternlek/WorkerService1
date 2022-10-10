@@ -4,6 +4,5 @@ namespace WorkerService1.Model
     {
         public string LocalTime { get; set; }
         public double Value { get; set; }
-        public int Order { get; set; }
     }
 }

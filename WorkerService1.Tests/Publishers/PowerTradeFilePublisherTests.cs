@@ -21,7 +21,6 @@ namespace WorkerService1.Tests.Publishers
 
         private Mock<IConfigurationSection> _mockPublishDirectoryConfigurationSection;
 
-
         private IList<string> _loggerMessages = new List<string>();
 
         [TestInitialize]
@@ -58,13 +57,11 @@ namespace WorkerService1.Tests.Publishers
                 {
                     new AggregatedPowerTrade
                     {
-                        Order = -1,
                         LocalTime = "23:00",
                         Value = 150.4567
                     },
                     new AggregatedPowerTrade
                     {
-                        Order = 0,
                         LocalTime = "00:00",
                         Value = 867.47
                     }

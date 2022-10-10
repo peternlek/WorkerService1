@@ -43,7 +43,7 @@ namespace WorkerService1.Publishers
                     stringBuilder.AppendLine("Local Time,Volume");
 
                     Array.ForEach(
-                        aggregatedPowerTrades.PowerTrades.OrderBy(agg => agg.Order).ToArray(),
+                        aggregatedPowerTrades.PowerTrades.ToArray(),
                         apt => stringBuilder.AppendLine($"{apt.LocalTime},{apt.Value}"));
 
                     await _fileSystemService.WriteAllTextToFile(

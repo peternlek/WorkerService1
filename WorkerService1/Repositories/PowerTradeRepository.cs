@@ -41,8 +41,7 @@ namespace WorkerService1.Repositories
                                 return new AggregatedPowerTrade
                                 {
                                     LocalTime = timePeriod, 
-                                    Value = grouping.Sum(p => p.Volume),
-                                    Order = timePeriodCount
+                                    Value = grouping.Sum(p => p.Volume)
                                 };
                             }).ToArray();
 
